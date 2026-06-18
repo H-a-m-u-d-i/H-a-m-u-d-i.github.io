@@ -1,0 +1,133 @@
+.contact-card {
+  display: flex;
+  gap: 4rem;
+  padding: 4rem;
+  border-radius: 2rem;
+}
+
+.contact-info {
+  flex: 1;
+}
+
+.contact-title {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--text-primary);
+}
+
+.contact-desc {
+  font-size: 1.125rem;
+  margin-bottom: 2rem;
+  color: var(--text-secondary);
+}
+
+.email-text {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  padding: 0.65rem 1.1rem;
+  background: var(--contact-info-bg);
+  border-radius: 0.5rem;
+  border: 1px solid var(--card-border);
+  width: fit-content;
+  transition: background 0.3s ease, border-color 0.3s ease;
+  user-select: text;
+}
+
+.email-text .contact-icon {
+  color: var(--accent-color);
+}
+
+/* Social icon links in contact */
+.contact-social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--card-border);
+  background: var(--contact-info-bg);
+  color: var(--text-secondary);
+  transition: all 0.2s ease;
+}
+
+.contact-social-link:hover {
+  color: var(--accent-color);
+  border-color: var(--accent-color);
+  background: rgba(59, 130, 246, 0.1);
+  transform: translateY(-3px);
+}
+
+.contact-form {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  position: relative;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-weight: 500;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.form-input {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background: var(--input-bg);
+  border: 1px solid var(--card-border);
+  color: var(--text-primary);
+  font-family: inherit;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.form-input::placeholder {
+  color: var(--text-secondary);
+  opacity: 0.6;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--accent-color);
+  background: var(--input-bg-focus);
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+
+.submit-btn {
+  align-self: flex-start;
+  margin-top: 0.5rem;
+}
+
+.submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.success-msg {
+  color: #10b981;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-top: 0.5rem;
+}
+
+@media (max-width: 868px) {
+  .contact-card {
+    flex-direction: column;
+    padding: 2rem;
+    gap: 3rem;
+  }
+}

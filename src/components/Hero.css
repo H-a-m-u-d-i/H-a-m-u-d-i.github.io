@@ -1,0 +1,143 @@
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 8rem;
+  position: relative;
+}
+
+.hero-content {
+  flex: 1;
+  max-width: 600px;
+  z-index: 2;
+}
+
+.hero-greeting {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.hero-name {
+  font-size: clamp(2.4rem, 4vw, 3.6rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin-bottom: 0.75rem;
+  /* Uses CSS variables so the gradient adapts to both themes */
+  background: linear-gradient(to right, var(--hero-title-from), var(--hero-title-to));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-role {
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+  letter-spacing: 0.01em;
+}
+
+.highlight-role {
+  background: linear-gradient(to right, var(--accent-color), #8b5cf6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-subtitle {
+  font-size: 1.125rem;
+  margin-bottom: 2.5rem;
+  max-width: 500px;
+  color: var(--text-secondary);
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.hero-socials {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.social-link {
+  color: var(--text-secondary);
+  transition: all 0.2s ease;
+}
+
+.social-link:hover {
+  color: var(--accent-color);
+  transform: translateY(-3px);
+}
+
+.hero-decoration {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+}
+
+.code-card {
+  padding: 2rem;
+  border-radius: 1rem;
+  font-family: 'Fira Code', 'Courier New', monospace;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  background: var(--code-card-bg);
+  box-shadow: 0 20px 40px var(--shadow-color);
+  border: 1px solid var(--code-card-border);
+  transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Dark mode syntax colors */
+.code-keyword { color: #c678dd; }
+.code-variable { color: #e5c07b; }
+.code-string { color: #98c379; }
+
+/* Light mode syntax colors — much better contrast on white */
+:root.light-mode .code-keyword { color: #7c3aed; }
+:root.light-mode .code-variable { color: #b45309; }
+:root.light-mode .code-string { color: #15803d; }
+
+.floating-slow {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0px); }
+}
+
+@media (max-width: 968px) {
+  .hero {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    gap: 4rem;
+  }
+
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .hero-decoration {
+    justify-content: center;
+    width: 100%;
+  }
+}
